@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arc.Domain
+namespace Arc.Enums
 {
-    public class Class1
+    public enum Gender : byte
     {
+        Male = 1,
+        Female = 2
     }
 }

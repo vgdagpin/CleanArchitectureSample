@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Arc.Application;
+using Arc.Persistence;
+using Autofac;
+using Autofac.Integration.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +20,17 @@ namespace Arc.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            var _builder = new ContainerBuilder()
+                .AddApplication()
+                .AddPersistence();
+
+            _builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            var _container = _builder.Build();
+
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
         }
     }
 }

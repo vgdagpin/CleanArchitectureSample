@@ -1,0 +1,6 @@
+﻿@using Arc.Application.Employees.Queries
+@using Newtonsoft.Json
+
+@model IEnumerable<EmployeeVM>
+
+<pre>@JsonConvert.SerializeObject(Model, Formatting.Indented)</pre>

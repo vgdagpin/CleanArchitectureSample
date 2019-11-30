@@ -35,7 +35,7 @@ namespace Arc.Application.Employees.Queries
 
             public async Task<IEnumerable<EmployeeVM>> Handle(GetEmployeesQuery request, CancellationToken cancellationToken)
             {
-                return await dbContext.Employees.Where(a => request.LastNameFilter != null && a.LastName.Contains(request.LastNameFilter))
+                var _data = await dbContext.Employees
                     .Select(a => new EmployeeVM
                     {
                         ID = a.ID,
@@ -45,6 +45,8 @@ namespace Arc.Application.Employees.Queries
                         MiddleName = a.MiddleName
                     })
                     .ToListAsync(cancellationToken);
+
+                return _data;
             }
         }
     }

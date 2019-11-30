@@ -1,6 +1,6 @@
 # CleanArchitectureSample
 
-Create database on this server **(localdb)\\MSSQLLocalDB**
+Create database on this server **(localdb)\MSSQLLocalDB**
 
 ```sh
 USE master

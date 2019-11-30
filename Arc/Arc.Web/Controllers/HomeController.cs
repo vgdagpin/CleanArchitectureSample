@@ -1,4 +1,5 @@
-﻿using Arc.Application.Employees.Queries;
+﻿using Arc.Application.Employees.Commands;
+using Arc.Application.Employees.Queries;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,23 @@ namespace Arc.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<JsonResult> SaveEmployee(EmployeeVM data)
+        {
+            var _cmd = new CreateEmployeeCommand
+            {
+                FirstName = data.FirstName,
+                Gender = data.Gender,
+                LastName = data.LastName,
+                MiddleName = data.MiddleName
+            };
+
+            var _result = await mediator.Send(_cmd);
+
+            return Json(_result);
         }
 
         public async Task<ActionResult> GetEmployeeList()

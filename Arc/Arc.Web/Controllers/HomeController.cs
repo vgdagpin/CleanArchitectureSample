@@ -28,13 +28,7 @@ namespace Arc.Web.Controllers
         [HttpPost]
         public async Task<JsonResult> SaveEmployee(EmployeeVM data)
         {
-            var _cmd = new CreateEmployeeCommand
-            {
-                FirstName = data.FirstName,
-                Gender = data.Gender,
-                LastName = data.LastName,
-                MiddleName = data.MiddleName
-            };
+            var _cmd = new CreateEmployeeCommand(data);
 
             var _result = await mediator.Send(_cmd);
 

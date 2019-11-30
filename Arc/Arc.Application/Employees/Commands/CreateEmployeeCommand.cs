@@ -1,4 +1,6 @@
 ﻿using Arc.Application.Common.Interfaces;
+using Arc.Application.Emails.Commands;
+using Arc.Application.Employees.Queries;
 using Arc.Domain.Entities;
 using Arc.Enums;
 using MediatR;
@@ -16,17 +18,29 @@ namespace Arc.Application.Employees.Commands
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public string EmailAddress { get; set; }
 
         public Gender Gender { get; set; }
 
 
+        public CreateEmployeeCommand(EmployeeVM employee)
+        {
+            FirstName = employee.FirstName;
+            MiddleName = employee.MiddleName;
+            LastName = employee.LastName;
+            EmailAddress = employee.EmailAddress;
+            Gender = employee.Gender;
+        }
+
         public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, int>
         {
             private readonly ITestUserDbContext dbContext;
+            private readonly IMediator mediator;
 
-            public CreateEmployeeCommandHandler(ITestUserDbContext dbContext)
+            public CreateEmployeeCommandHandler(ITestUserDbContext dbContext, IMediator mediator)
             {
                 this.dbContext = dbContext;
+                this.mediator = mediator;
             }
 
             public async Task<int> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
@@ -36,11 +50,15 @@ namespace Arc.Application.Employees.Commands
                     FirstName = request.FirstName,
                     MiddleName = request.MiddleName,
                     LastName = request.LastName,
-                    Gender = request.Gender
+                    Gender = request.Gender,
+                    EmailAddress = request.EmailAddress
                 };
 
                 dbContext.Employees.Add(_newUser);
                 await dbContext.SaveChangesAsync(cancellationToken);
+
+                var _emailCmd = new SendEmailCommand(_newUser.EmailAddress, "Welcome to the clean architecture club!");
+                await mediator.Send(_emailCmd);
 
                 return _newUser.ID;
             }

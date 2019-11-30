@@ -15,12 +15,9 @@ namespace Arc.Persistence
         public TestUserDbContext()
             : base("name=ArcUserDbContext")
         {
-            Database.SetInitializer<TestUserDbContext>(null);
+            Database.SetInitializer(new CreateDatabaseIfNotExists<TestUserDbContext>());
         }
 
         public DbSet<Employee> Employees { get; set; }
-
-
-
     }
 }

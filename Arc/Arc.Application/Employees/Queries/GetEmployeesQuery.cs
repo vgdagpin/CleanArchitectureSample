@@ -42,7 +42,8 @@ namespace Arc.Application.Employees.Queries
                         LastName = a.LastName,
                         FirstName = a.FirstName,
                         Gender = a.Gender,
-                        MiddleName = a.MiddleName
+                        MiddleName = a.MiddleName,
+                        EmailAddress = a.EmailAddress
                     })
                     .ToListAsync(cancellationToken);
 

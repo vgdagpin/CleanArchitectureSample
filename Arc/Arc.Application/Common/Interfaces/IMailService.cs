@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arc.Infrastructure
+namespace Arc.Application.Common.Interfaces
 {
-    public class Class1
+    public interface IMailService
     {
+        Task SendEmail(string emailAddress, string body);
     }
 }

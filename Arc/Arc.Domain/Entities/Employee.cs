@@ -26,6 +26,10 @@ namespace Arc.Domain.Entities
         [Required]
         public string LastName { get; set; }
 
+        [Required]
+        [MaxLength(255)]
+        public string EmailAddress { get; set; }
+
         public Gender Gender { get; set; }
     }
 }

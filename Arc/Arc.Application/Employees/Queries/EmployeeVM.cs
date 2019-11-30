@@ -23,6 +23,10 @@ namespace Arc.Application.Employees.Queries
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Required]
+        [Display(Name = "Email")]
+        public string EmailAddress { get; set; }
+
         public Gender Gender { get; set; }
     }
 }

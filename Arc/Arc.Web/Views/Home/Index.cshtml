@@ -92,6 +92,11 @@
                         @Html.AntiForgeryToken()
 
                         <div class="form-group row">
+                            @Html.LabelFor(m => m.Gender, new { @class = "col-sm-5 col-form-label" })
+                            @Html.EnumDropDownListFor(m => m.Gender, new { @class = "col-sm-7" })
+                        </div>
+
+                        <div class="form-group row">
                             @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-5 col-form-label" })
                             @Html.TextBoxFor(m => m.FirstName, new { @class = "col-sm-7" })
                         </div>
@@ -107,9 +112,10 @@
                         </div>
 
                         <div class="form-group row">
-                            @Html.LabelFor(m => m.Gender, new { @class = "col-sm-5 col-form-label" })
-                            @Html.EnumDropDownListFor(m => m.Gender, new { @class = "col-sm-7" })
+                            @Html.LabelFor(m => m.EmailAddress, new { @class = "col-sm-5 col-form-label" })
+                            @Html.TextBoxFor(m => m.EmailAddress, new { type = "email", @class = "col-sm-7" })
                         </div>
+
                         <br />
                         <label id="lblLoginError" style="color:red;"></label>
                     </div>

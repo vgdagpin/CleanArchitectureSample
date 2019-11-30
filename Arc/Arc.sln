@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Net Framework", ".Net Fram
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FCCD8A62-2BBB-4AAF-8986-7B12DBF3A4F4}"
 	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
 		References.txt = References.txt
 	EndProjectSection
 EndProject

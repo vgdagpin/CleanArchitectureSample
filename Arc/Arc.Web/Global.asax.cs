@@ -1,6 +1,5 @@
 ﻿using Arc.Application;
 using Arc.Infrastructure;
-using Arc.Persistence;
 using Autofac;
 using Autofac.Integration.Mvc;
 using System;
@@ -25,8 +24,7 @@ namespace Arc.Web
 
             var _builder = new ContainerBuilder()
                 .AddApplication()
-                .AddInfrastructure()
-                .AddPersistence();
+                .AddInfrastructure();
 
             _builder.RegisterControllers(typeof(MvcApplication).Assembly);
 

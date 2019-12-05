@@ -11,6 +11,10 @@ namespace Arc.Infrastructure
     {
         public static ContainerBuilder AddInfrastructure(this ContainerBuilder container)
         {
+            container.RegisterType<TestUserDbContext>()
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
             container.RegisterType<AzureMailService>()
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();

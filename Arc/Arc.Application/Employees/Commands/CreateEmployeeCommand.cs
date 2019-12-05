@@ -36,11 +36,13 @@ namespace Arc.Application.Employees.Commands
         {
             private readonly ITestUserDbContext dbContext;
             private readonly IMediator mediator;
+            private readonly ICurrentUser currentUser;
 
-            public CreateEmployeeCommandHandler(ITestUserDbContext dbContext, IMediator mediator)
+            public CreateEmployeeCommandHandler(ITestUserDbContext dbContext, IMediator mediator, ICurrentUser currentUser)
             {
                 this.dbContext = dbContext;
                 this.mediator = mediator;
+                this.currentUser = currentUser;
             }
 
             public async Task<int> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
@@ -51,7 +53,9 @@ namespace Arc.Application.Employees.Commands
                     MiddleName = request.MiddleName,
                     LastName = request.LastName,
                     Gender = request.Gender,
-                    EmailAddress = request.EmailAddress
+                    EmailAddress = request.EmailAddress,
+                    CreatedOn = DateTime.UtcNow,
+                    CreatedBy = currentUser.ID
                 };
 
                 dbContext.Employees.Add(_newUser);

@@ -31,5 +31,8 @@ namespace Arc.Domain.Entities
         public string EmailAddress { get; set; }
 
         public Gender Gender { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using Arc.Infrastructure.Identities;
+using Autofac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,10 @@ namespace Arc.Infrastructure
             container.RegisterType<TestUserDbContext>()
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
+
+            container.RegisterType<CurrentUser>()
+                .AsImplementedInterfaces()
+                .InstancePerRequest();
 
             container.RegisterType<AzureMailService>()
                 .AsImplementedInterfaces()

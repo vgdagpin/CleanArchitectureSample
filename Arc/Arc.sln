@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arc", "Arc\Arc.csproj", "{C426DC9C-C698-4A05-953F-22578D5F9EE1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Net Framework", ".Net Framework", "{2D97DF11-B43B-4BE8-ABAE-ABC65EBD6436}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FCCD8A62-2BBB-4AAF-8986-7B12DBF3A4F4}"
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C426DC9C-C698-4A05-953F-22578D5F9EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C426DC9C-C698-4A05-953F-22578D5F9EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C426DC9C-C698-4A05-953F-22578D5F9EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C426DC9C-C698-4A05-953F-22578D5F9EE1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76F284D3-1F09-4FCE-BEDB-961BC9F7DAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76F284D3-1F09-4FCE-BEDB-961BC9F7DAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F284D3-1F09-4FCE-BEDB-961BC9F7DAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,7 +50,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C426DC9C-C698-4A05-953F-22578D5F9EE1} = {98E7C612-FAF2-4EA6-BE0E-7DF55747EBC2}
 		{FCCD8A62-2BBB-4AAF-8986-7B12DBF3A4F4} = {2D97DF11-B43B-4BE8-ABAE-ABC65EBD6436}
 		{98E7C612-FAF2-4EA6-BE0E-7DF55747EBC2} = {2D97DF11-B43B-4BE8-ABAE-ABC65EBD6436}
 		{76F284D3-1F09-4FCE-BEDB-961BC9F7DAF0} = {98E7C612-FAF2-4EA6-BE0E-7DF55747EBC2}

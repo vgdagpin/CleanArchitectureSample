@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arc.Enums
+namespace Arc
 {
     public enum Gender : byte
     {

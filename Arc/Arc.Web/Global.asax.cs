@@ -28,9 +28,7 @@ namespace Arc.Web
 
             _builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
-            var _container = _builder.Build();
-
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(_builder.Build()));
         }
     }
 }

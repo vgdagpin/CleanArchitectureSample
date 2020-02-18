@@ -80,10 +80,6 @@
       <Project>{EC8EB041-23F3-44C7-BF5E-5F2AEAC89F34}</Project>
       <Name>Arc.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Arc\Arc.csproj">
-      <Project>{C426DC9C-C698-4A05-953F-22578D5F9EE1}</Project>
-      <Name>Arc</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -43,14 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Arc\Arc.csproj">
-      <Project>{C426DC9C-C698-4A05-953F-22578D5F9EE1}</Project>
-      <Name>Arc</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

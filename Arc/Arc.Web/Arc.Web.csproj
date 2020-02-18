@@ -210,10 +210,6 @@
       <Project>{196b47e5-f88e-4080-9a84-6627d2796c0c}</Project>
       <Name>Arc.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Arc\Arc.csproj">
-      <Project>{c426dc9c-c698-4a05-953f-22578d5f9ee1}</Project>
-      <Name>Arc</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
